@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{edc20caf-d827-494b-a4f1-a3bc6df2b18b}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>NewCCompiler</RootNamespace>
+    <AssemblyName>geppetto</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <Name>NewCCompiler</Name>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+    <TargetFSharpCoreVersion>4.3.0.0</TargetFSharpCoreVersion>
+    <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <Tailcalls>false</Tailcalls>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Gen</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>..\bin\Debug\NewCCompiler.XML</DocumentationFile>
+    <StartWorkingDirectory></StartWorkingDirectory>
+    <StartArguments></StartArguments>
+    <PlatformTarget>x64</PlatformTarget>
+    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
+    <StartAction>Project</StartAction>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE;Gen</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>..\bin\Release\NewCCompiler.XML</DocumentationFile>
+    <StartArguments></StartArguments>
+    <PlatformTarget>x64</PlatformTarget>
+    <StartWorkingDirectory></StartWorkingDirectory>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '11.0'">
+      <PropertyGroup>
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
+  <ItemGroup>
+    <FsYacc Include="..\src\fsharp\LLVM_grammar.fsy">
+      <OtherFlags>--module LLVM_grammar</OtherFlags>
+      <Link>LLVM_grammar.fsy</Link>
+    </FsYacc>
+    <FsLex Include="..\src\fsharp\LLVM_syntax.fsl">
+      <OtherFlags>--unicode</OtherFlags>
+      <Link>LLVM_syntax.fsl</Link>
+    </FsLex>
+    <Compile Include="..\src\fsharp\Lib.fs">
+      <Link>Lib.fs</Link>
+    </Compile>
+    <Compile Include="..\src\fsharp\LLVM.fs">
+      <Link>LLVM.fs</Link>
+    </Compile>
+    <None Include="..\src\fsharp\LLVM_grammar.fsy">
+      <Link>LLVM_grammar.fsy</Link>
+    </None>
+    <Compile Include="..\src\fsharp\LLVM_grammar.fs">
+      <Link>LLVM_grammar.fs</Link>
+    </Compile>
+    <None Include="..\src\fsharp\LLVM_syntax.fsl">
+      <Link>LLVM_syntax.fsl</Link>
+    </None>
+    <Compile Include="..\src\fsharp\LLVM_syntax.fs">
+      <Link>LLVM_syntax.fs</Link>
+    </Compile>
+    <Compile Include="..\src\fsharp\Field.fs">
+      <Link>Field.fs</Link>
+    </Compile>
+    <Compile Include="..\src\fsharp\QAP.fs">
+      <Link>QAP.fs</Link>
+    </Compile>
+    <Compile Include="..\src\fsharp\Proof.fs">
+      <Link>Proof.fs</Link>
+    </Compile>
+    <Compile Include="..\src\fsharp\QapReader.fs">
+      <Link>QapReader.fs</Link>
+    </Compile>
+    <Compile Include="..\src\fsharp\Val.fs">
+      <Link>Val.fs</Link>
+    </Compile>
+    <Compile Include="..\src\fsharp\VM.fs">
+      <Link>VM.fs</Link>
+    </Compile>
+    <Compile Include="..\src\fsharp\Bank.fs">
+      <Link>Bank.fs</Link>
+    </Compile>
+    <Compile Include="..\src\fsharp\CfgAnnotator.fs">
+      <Link>CfgAnnotator.fs</Link>
+    </Compile>
+    <Compile Include="..\src\fsharp\TestCfgAnnotator.fs">
+      <Link>TestCfgAnnotator.fs</Link>
+    </Compile>
+    <Compile Include="..\src\fsharp\DataCache.fs">
+      <Link>DataCache.fs</Link>
+    </Compile>
+    <Compile Include="..\src\fsharp\QAPGen.fs">
+      <Link>QAPGen.fs</Link>
+    </Compile>
+    <Compile Include="..\src\fsharp\QAPEval.fs">
+      <Link>QAPEval.fs</Link>
+    </Compile>
+    <Compile Include="..\src\fsharp\Main.fs">
+      <Link>Main.fs</Link>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FSharp.PowerPack, Version=4.0.0.1, Culture=neutral, PublicKeyToken=f536804aa0eb945b" />
+    <Reference Include="FsLexYacc.Runtime">
+      <HintPath>packages\FsLexYacc.Runtime.6.0.4\lib\net40\FsLexYacc.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Serialization" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <FsLexOutputFolder>..\src\fsharp\</FsLexOutputFolder>
+    <FsYaccOutputFolder>..\src\fsharp\</FsYaccOutputFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <Tailcalls>false</Tailcalls>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Gen</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>..\bin\Debug\NewCCompiler.XML</DocumentationFile>
+    <StartWorkingDirectory>C:\Users\fournet\pinocchio\vc-blocks\code\compiler\input</StartWorkingDirectory>
+    <StartArguments>-r --fflib v 0  -v -t -e --load build/branch.s --compile f 0 --compile f 1 --keygen --input In 0,4 --eval f 0 --output Out --input In 1,4 --eval f 0 --output Out --input In 0,4 --eval f 1 --output Out --input In 1,4 --eval f 1 --output Out</StartArguments>
+    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
+    <StartAction>Project</StartAction>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE;Gen</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>..\bin\Release\NewCCompiler.XML</DocumentationFile>
+    <StartArguments>--fflib v 0  --load build/two-matrix.99.s --compile outsource --keygen --input Input random</StartArguments>
+    <StartWorkingDirectory>$(SolutionDir)\..\input\</StartWorkingDirectory>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <Import Project=".\packages\FsLexYacc.6.0.3\bin\FsLexYacc.targets" Condition="Exists('$(SolutionDir)\packages\FsLexYacc.6.0.3\bin\FsLexYacc.targets')" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	     Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

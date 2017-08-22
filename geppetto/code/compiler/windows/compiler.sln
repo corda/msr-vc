@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "compiler", "compiler.fsproj", "{EDC20CAF-D827-494B-A4F1-A3BC6DF2B18B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{09A9F555-294A-467B-8321-BAE3B42F8D52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FBD0B007-94F3-4F50-A1E1-42F26EE9CAD2}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDC20CAF-D827-494B-A4F1-A3BC6DF2B18B}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{EDC20CAF-D827-494B-A4F1-A3BC6DF2B18B}.Debug|ARM.ActiveCfg = Debug|x64
+		{EDC20CAF-D827-494B-A4F1-A3BC6DF2B18B}.Debug|Mixed Platforms.ActiveCfg = Debug|x64
+		{EDC20CAF-D827-494B-A4F1-A3BC6DF2B18B}.Debug|Mixed Platforms.Build.0 = Debug|x64
+		{EDC20CAF-D827-494B-A4F1-A3BC6DF2B18B}.Debug|Win32.ActiveCfg = Debug|x64
+		{EDC20CAF-D827-494B-A4F1-A3BC6DF2B18B}.Debug|x64.ActiveCfg = Debug|x64
+		{EDC20CAF-D827-494B-A4F1-A3BC6DF2B18B}.Debug|x64.Build.0 = Debug|x64
+		{EDC20CAF-D827-494B-A4F1-A3BC6DF2B18B}.Debug|x86.ActiveCfg = Debug|x64
+		{EDC20CAF-D827-494B-A4F1-A3BC6DF2B18B}.Release|Any CPU.ActiveCfg = Release|x64
+		{EDC20CAF-D827-494B-A4F1-A3BC6DF2B18B}.Release|ARM.ActiveCfg = Release|x64
+		{EDC20CAF-D827-494B-A4F1-A3BC6DF2B18B}.Release|Mixed Platforms.ActiveCfg = Release|x64
+		{EDC20CAF-D827-494B-A4F1-A3BC6DF2B18B}.Release|Mixed Platforms.Build.0 = Release|x64
+		{EDC20CAF-D827-494B-A4F1-A3BC6DF2B18B}.Release|Win32.ActiveCfg = Release|x64
+		{EDC20CAF-D827-494B-A4F1-A3BC6DF2B18B}.Release|x64.ActiveCfg = Release|x64
+		{EDC20CAF-D827-494B-A4F1-A3BC6DF2B18B}.Release|x64.Build.0 = Release|x64
+		{EDC20CAF-D827-494B-A4F1-A3BC6DF2B18B}.Release|x86.ActiveCfg = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

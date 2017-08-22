@@ -1,0 +1,17 @@
+bin/
+Debug/
+Release/
+ipch/
+obj/
+packages/
+x64/
+*.sdf
+*.suo
+*.user
+*.opensdf
+config.txt
+*.vsp*
+*.psess
+FFLib-profile.vcxproj
+FFLib-test.vcxproj
+compiler-profile.fsproj
